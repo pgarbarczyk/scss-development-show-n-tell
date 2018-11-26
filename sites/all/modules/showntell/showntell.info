@@ -1,0 +1,6 @@
+name = Show n Tell
+description = Show n Tell.
+package = Show n Tell
+
+version = "7.x-0.1"
+core = 7.x

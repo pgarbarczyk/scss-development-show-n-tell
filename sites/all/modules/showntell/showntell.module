@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function showntell_menu() {
+  $items = [];
+
+  $items['showntell'] = [
+    'title' => 'Show n Tell',
+    'page callback' => 'showntell_hello_world',
+    'access arguments' => [1],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+
+  return $items;
+}
+
+/**
+ * Callback function.
+ * 
+ * @return string
+ */
+function showntell_hello_world() {
+  $params = [
+    'show' => [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar diam non nulla faucibus, eget pulvinar erat rutrum.',
+      'Duis mattis mauris nunc, eu feugiat lorem imperdiet at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Integer accumsan nulla dui, vehicula pulvinar erat dapibus id. Morbi cursus tempus sapien a auctor.',
+    ],
+    'tell' => [
+      'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut risus dui, accumsan vel urna a, accumsan bibendum erat.',
+      'Cras vitae mi pretium, mattis arcu vel, mollis tortor. Sed magna neque, tincidunt vel mauris et, posuere elementum elit.',
+      'Nulla leo sem, lobortis vel finibus vel, rutrum id ligula. Nulla congue, ante ut vestibulum aliquet, mi felis tincidunt diam, tristique dapibus augue est quis quam. Vivamus eu vehicula enim. In cursus metus in nibh venenatis ullamcorper.',
+    ],
+  ];
+
+  $path = drupal_get_path('module', 'showntell');
+  drupal_add_css($path . '/assets/css/showntell.css');
+
+  return theme('showntell_hello_world', ['params' => $params]);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function showntell_theme() {
+  return [
+    'showntell_hello_world' => [
+      'variables' => ['params' => []],
+      'template' => 'showntell',
+      'path' => drupal_get_path('module', 'showntell') . '/templates',
+    ],
+  ];
+}

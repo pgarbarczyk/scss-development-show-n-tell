@@ -1,0 +1,3 @@
+compass watch --app-dir . --sass-dir . --css-dir . --sourcemap
+
+compass watch --app-dir . --sass-dir assets/scss --css-dir assets/css --sourcemap
