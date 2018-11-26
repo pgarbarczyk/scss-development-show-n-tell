@@ -9,11 +9,20 @@ function showntell_menu() {
   $items['showntell'] = [
     'title' => 'Show n Tell',
     'page callback' => 'showntell_hello_world',
-    'access arguments' => [1],
+    'access callback' => 'showntell_access_callback',
     'type' => MENU_NORMAL_ITEM,
   ];
 
   return $items;
+}
+
+/**
+ * Access callback.
+ *
+ * @return bool
+ */
+function showntell_access_callback() {
+  return TRUE;
 }
 
 /**
@@ -22,6 +31,10 @@ function showntell_menu() {
  * @return string
  */
 function showntell_hello_world() {
+
+  // Slowdown!
+  sleep(10);
+
   $params = [
     'show' => [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar diam non nulla faucibus, eget pulvinar erat rutrum.',

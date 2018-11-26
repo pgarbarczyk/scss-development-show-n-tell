@@ -1,11 +1,11 @@
 <div class="snt-container">
   <div clas="snt-header">
-    <h1>Hello showntell!</h1>
+    <h1><?php echo t('Hello Show n Tell!'); ?></h1>
   </div>
   <div class="snt-body">
     <div class="snt-show">
       <div class="snt-show-header">
-        <h2>Show</h2>
+        <h2><?php echo t('Show'); ?></h2>
       </div>
       <div class="snt-show-body">
         <ul>
@@ -20,7 +20,7 @@
 
     <div class="snt-right">
       <div class="snt-tell-header">
-        <h2>Tell</h2>
+        <h2><?php echo t('Tell'); ?></h2>
       </div>
       <div class="snt-tell-body">
         <?php foreach ($params['tell'] as $v): ?>
@@ -33,4 +33,3 @@
     
   </div>
 </div>
-
