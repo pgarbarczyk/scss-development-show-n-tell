@@ -1,5 +1,5 @@
-<div class="snt-container">
-  <div clas="snt-header">
+<div class="snt-container" id="snt_container">
+  <div class="snt-header">
     <h1><?php echo t('Hello Show n Tell!'); ?></h1>
   </div>
   <div class="snt-body">
