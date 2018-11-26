@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="snt-right">
+    <div class="snt-tell">
       <div class="snt-tell-header">
         <h2><?php echo t('Tell'); ?></h2>
       </div>
